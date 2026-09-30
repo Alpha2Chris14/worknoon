@@ -1,0 +1,23 @@
+services:
+    backend:
+        build: . # Laravel app (Dockerfile at repo root)
+        environment:
+            APP_ENV: local
+            APP_DEBUG: "false"
+            APP_KEY: ${APP_KEY:-base64:PASTE_A_DEMO_KEY_HERE}
+            DB_CONNECTION: sqlite
+            SESSION_DRIVER: file
+            CACHE_STORE: file
+            QUEUE_CONNECTION: sync
+            PHP_CLI_SERVER_WORKERS: 4
+            GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+            LLM_MODEL: ${LLM_MODEL:-gemini-3.5-flash}
+        ports:
+            - "8000:8000"
+
+    frontend:
+        build: ./frontend
+        depends_on:
+            - backend
+        ports:
+            - "3000:80"
