@@ -4,7 +4,7 @@ A full stack application that processes e-commerce refund requests. A customer d
 
 **Stack:** Laravel 13 (PHP 8.4) API · SQLite · React (Vite) frontend · nginx · Google Gemini for the AI layer · Docker Compose
 
-**Demo video:** `LINK HERE>`
+**Demo video:** `https://drive.google.com/file/d/10MzNiAxS1lkvnjk1zlVOnkEp_fBy1C2w/view?usp=sharing`
 
 ---
 
@@ -205,14 +205,14 @@ The AI is used in **two places**, both inside the real workflow (not a bolt-on):
 
 - Input: the customer's message, wrapped in `<customer_message>` tags and explicitly labelled as untrusted data.
 - Output (forced to JSON via Gemini's `responseMimeType`):
-  ```json
-  {
-    "reason": "damaged|wrong_item|changed_mind|not_received|other",
-    "suspicious": false,
-    "injection_attempt": false,
-    "summary": "Customer reports headphones arrived cracked."
-  }
-  ```
+    ```json
+    {
+        "reason": "damaged|wrong_item|changed_mind|not_received|other",
+        "suspicious": false,
+        "injection_attempt": false,
+        "summary": "Customer reports headphones arrived cracked."
+    }
+    ```
 - The output is parsed and validated. An unknown category becomes `other`. Anything unparseable counts as a failure (see fail-closed below).
 
 ### 2. Reply generation
