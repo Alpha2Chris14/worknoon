@@ -2,7 +2,7 @@
 
 A full stack application that processes e-commerce refund requests. A customer describes their problem in a chat-style form, and the system decides whether to **Approve**, **Deny**, or **Escalate** the request to a human. A support dashboard shows every decision with a full audit trail.
 
-**Stack:** Laravel 13 (PHP 8.3) API · SQLite · React (Vite) frontend · nginx · Google Gemini for the AI layer · Docker Compose
+**Stack:** Laravel 13 (PHP 8.4) API · SQLite · React (Vite) frontend · nginx · Google Gemini for the AI layer · Docker Compose
 
 **Demo video:** `LINK HERE>`
 
@@ -81,7 +81,7 @@ Notes:
 
 ## Running without Docker
 
-**Requirements:** PHP 8.3+ with `pdo_sqlite` and `sqlite3` extensions, Composer, Node 18+.
+**Requirements:** PHP 8.4+ with `pdo_sqlite` and `sqlite3` extensions, Composer, Node 18+.
 
 **Backend** (from the repo root):
 
